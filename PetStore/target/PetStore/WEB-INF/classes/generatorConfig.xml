@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="xxx" targetRuntime="MyBatis3Simple">
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--设置jabc驱动-->
+        <jdbcConnection driverClass="org.mariadb.jdbc.Driver"
+                        connectionURL="jdbc:mariadb://localhost/petstore"
+                        userId="abc"
+                        password="abcabc">
+        </jdbcConnection>
+        <!--设置实体类创建的位置-->
+        <javaModelGenerator targetPackage="com.nf147.entity" targetProject="F:\Study2\代码\intellij IDEA\PetStore\src\main\java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--设置映射文件创建的位置-->
+        <sqlMapGenerator targetPackage="mappers" targetProject="F:\Study2\代码\intellij IDEA\PetStore\src\main\resources">
+        </sqlMapGenerator>
+        <!--设置实体类相关接口创建的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.nf147.dao" targetProject="F:\Study2\代码\intellij IDEA\PetStore\src\main\java">
+        </javaClientGenerator>
+        <!--指定需要创建的表-->
+        <!--<table tableName="author2">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="post">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="inserts">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <table tableName="%">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
